@@ -17,11 +17,11 @@ after_success:
     - docker build -t sergerodriguezequisoft/multi-server ./server  
     - docker build -t sergerodriguezequisoft/multi-worker ./worker
     
-# Log in to the Docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--stdin
+    # Log in to the Docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--stdin
 
-# Take those images and push them to Docker Hub
-- docker push sergerodriguezequisoft/multi-client   
-- docker push sergerodriguezequisoft/multi-nginx  
-- docker push sergerodriguezequisoft/multi-server  
-- docker push sergerodriguezequisoft/multi-worker  
+    # Take those images and push them to Docker Hub
+    - docker push sergerodriguezequisoft/multi-client   
+    - docker push sergerodriguezequisoft/multi-nginx  
+    - docker push sergerodriguezequisoft/multi-server  
+    - docker push sergerodriguezequisoft/multi-worker  
